@@ -9,7 +9,7 @@ A repository to collect phaser3 experiments / spikes in the development of `enna
 
 ## Repository organization for this experiments repository
 
-* Don't touch top-level folders that you didn't start, clone from existing
+* Don't touch top-level folders that you didn't start, copy from existing
 * Commits to branches are unprotected, feel free to commit to `main`. No PRs. Branch if desired or necessary.
 
 ## Project terminology
