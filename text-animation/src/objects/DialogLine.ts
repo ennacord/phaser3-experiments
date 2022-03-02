@@ -3,8 +3,7 @@ import Phaser, { Scene } from 'phaser';
 
 const dummyText = 'Lorem ipsum.';
 
-//const VERY_LONG_TIME = 1000 * 60 * 30; // 30 mins
-const VERY_LONG_TIME = 1000 * 10; // 30 mins
+const VERY_LONG_TIME = 1000 * 60 * 30; // 30 mins
 const VERY_FAR_AWAY = WINDOW_HEIGHT * 5;
 const STATE_KEY = 'state';
 
