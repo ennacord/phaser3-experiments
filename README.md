@@ -4,7 +4,7 @@ A repository to collect phaser3 experiments / spikes in the development of `enna
 
 * `phaser3-rollup-typescript` is the base (sandbox) project, don't touch it but copy it into a new folder.
 * `rewindable-movement` is an experiment (in progress) for a game where we can move an actor, but movement is logged, and a certain input "rewinds" events reading from the log.
-* `scene` is an experiment (in progress) to form the foundation of the game, with a focus on well-organizing the game systems related to the scene.
+* `vnscene` is an experiment (in progress) to form the foundation of the game, with a focus on well-organizing the game systems related to the scene.
 * `text-animation` is an experiment (in progress) first to emulate how text is progressively displayed in VNs and in response to input, and next (not yet started) to encompass also the dialogue log
 
 ## Repository organization for this experiments repository
