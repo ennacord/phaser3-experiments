@@ -1,24 +1,22 @@
 import Phaser, { Scene } from 'phaser';
-import { WINDOW_WIDTH } from '../constants';
-import { Dialog } from '../objects/Dialog';
+import { DEFAULT_DIALOG_LINE_CREATE_OPTS, DialogLine } from '../objects/DialogLine';
 
 export default class Demo extends Phaser.Scene {
+	dialogLine?: IDialogLine;
 
-  dialog = new Dialog();
+	constructor() {
+		super('GameScene');
+	}
 
-  constructor() {
-    super('GameScene');
-  }
+	preload() {
+		DialogLine.preload(this);
+	}
 
-  preload() {
-    this.dialog.preload(this);
-  }
+	create() {
+		this.dialogLine = this.add.dialogLine(DEFAULT_DIALOG_LINE_CREATE_OPTS);
+	}
 
-  create() {
-    this.dialog.create(this);
-  }
-
-  update() {
-    this.dialog.update(this);
-  }
+	update() {
+		this.dialogLine?.update(this);
+	}
 }
