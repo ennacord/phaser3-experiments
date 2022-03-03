@@ -1,25 +1,36 @@
 import Phaser, { Scene } from 'phaser';
-import { DEFAULT_DIALOG_LINE_CREATE_OPTS, DialogLine, DialogLineUpdateAction } from '../objects/DialogLine';
+import { Dialog, DialogUpdateAction } from '../objects/Dialog';
+import { DEFAULT_DIALOG_LINE_CREATE_OPTS } from '../objects/DialogLine';
+
+const text = [
+	'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+	'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+	'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+	'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+];
 
 export default class Demo extends Phaser.Scene {
-	dialogLine?: IDialogLine;
+	dialog?: IDialog;
 
 	constructor() {
 		super('GameScene');
 	}
 
 	preload() {
-		DialogLine.preload(this);
+		Dialog.preload(this);
 	}
 
 	create() {
-		this.dialogLine = this.add.dialogLine(DEFAULT_DIALOG_LINE_CREATE_OPTS);
+		this.dialog = this.add.dialog({
+			...DEFAULT_DIALOG_LINE_CREATE_OPTS,
+			text,
+		});
 		this.input.on('pointerdown', () => {
-			this.dialogLine?.update(this, { dialogLineUpdate: DialogLineUpdateAction.FORCE_NEXT_STATE });
+			this.dialog?.update(this, { dialogUpdate: DialogUpdateAction.PROGRESS });
 		});
 	}
 
 	update() {
-		this.dialogLine?.update(this, {});
+		this.dialog?.update(this, {});
 	}
 }
